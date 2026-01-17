@@ -932,6 +932,10 @@ class TimeCopilot:
             ctx: RunContext[ExperimentDataset],
             models: list[str],
         ) -> str:
+            # Guard against duplicate model names (LLMs sometimes repeat items).
+            # TimeCopilotForecaster enforces unique aliases, so we deduplicate here
+            # while preserving the caller's order.
+            models = list(dict.fromkeys(models))
             callable_models = []
             for str_model in models:
                 if str_model not in self.forecasters:
