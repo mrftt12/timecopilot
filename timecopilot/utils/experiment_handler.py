@@ -31,7 +31,7 @@ def mase(
     train_df: pd.DataFrame,
     id_col: str = "unique_id",
     target_col: str = "y",
-    #cutoff_col: str | None = "cutoff",
+    cutoff_col: str | None = "cutoff",
     **_: Any,
 ) -> pd.DataFrame:
     mean_abs_err = mae(df, models, id_col, target_col)
