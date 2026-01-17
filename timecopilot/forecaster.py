@@ -242,8 +242,6 @@ class TimeCopilotForecaster(Forecaster):
                     - "unique_id" column to indicate the series.
                     - "ds" column to indicate the timestamp.
                     - "y" column to indicate the target.
-                    - "cutoff" column to indicate which window each forecast
-                      belongs to.
                     - point forecasts for each timestamp, series and model.
                     - prediction intervals if `level` is specified.
                     - quantile forecasts if `quantiles` is specified.
